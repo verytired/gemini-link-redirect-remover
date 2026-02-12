@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Redirect Remover",
+  "version": "1.0.0",
+  "description": "Removes Google's URL redirect wrapper from links in Gemini.",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://gemini.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://gemini.google.com/*",
+        "*://gemini.google.co.jp/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
